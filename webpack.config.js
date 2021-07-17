@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const srcDir        = path.join(__dirname,"./src")
 const distDir       = path.join(__dirname,"./build") // pode usar a dist
-const entry         = path.join(srcDir, "index.js" )
+const entry         = path.join(srcDir, "index.jsx" )
 const srcHtmlLayout = path.join(__dirname, "./src/index.html")
 module.exports = {
   mode: process.env.NODE_ENV || "development",
@@ -21,11 +21,7 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
-    modules: [ "node_modules", srcDir ],
-    alias: {
-      "react-dom": "@hot-loader/react-dom"
-    },
-    fallback: { "crypto": false }
+    modules: [ "node_modules", srcDir ]
   },
   plugins: [
     new HtmlWebpackPlugin({
