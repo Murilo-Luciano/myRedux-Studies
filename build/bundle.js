@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n //REDUCER\n\nconst counter = (state = 0, action) => {\n  switch (action.type) {\n    case 'INCREMENT':\n      return state + 1;\n\n    case 'DECREMENT':\n      return state - 1;\n\n    default:\n      return state;\n  }\n};\n\nconst store = (0,redux__WEBPACK_IMPORTED_MODULE_0__.createStore)(counter);\nstore.subscribe(() => {\n  document.body.innerText = store.getState();\n});\ndocument.addEventListener('click', () => {\n  store.dispatch({\n    type: 'INCREMENT'\n  });\n});\n\n//# sourceURL=webpack://my-first-redux-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n //REDUCER\n\nconst counter = (state = 0, action) => {\n  switch (action.type) {\n    case 'INCREMENT':\n      return state + 1;\n\n    case 'DECREMENT':\n      return state - 1;\n\n    default:\n      return state;\n  }\n};\n\nconst store = (0,redux__WEBPACK_IMPORTED_MODULE_0__.createStore)(counter);\n\nconst render = () => {\n  document.body.innerText = store.getState();\n};\n\nstore.subscribe(render);\nrender();\ndocument.addEventListener('click', () => {\n  store.dispatch({\n    type: 'INCREMENT'\n  });\n});\n\n//# sourceURL=webpack://my-first-redux-app/./src/index.js?");
 
 /***/ }),
 
